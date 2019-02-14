@@ -35,12 +35,12 @@ import java.util.Scanner;
          
    
          Scanner scan = new Scanner(System.in);
-         System.out.print("Please enter a Twitter handle, do not include the '@' symbol (or 'done' to quit.)");
+         System.out.print("Please enter a Twitter handle, do not include the '@' symbol (or 'done' to quit.)\n");
          String twitter_handle = scan.next();
          while (!"done".equals(twitter_handle))
          {
             bigBird.queryHandle(twitter_handle);
-            System.out.print("Please enter a Twitter handle, do not include the '@' symbol (or 'done' to quit.)");
+            System.out.print("Please enter a Twitter handle, do not include the '@' symbol (or 'done' to quit.)\n");
             twitter_handle = scan.next();
              
          }

@@ -53,6 +53,7 @@ public class Twitterer
         statuses.clear();
         fetchTweets(handle);
         int cnt = statuses.size();
+        // To display the tweets in reverse order. So that the most recent tweet is displayed in the end.
         while(cnt > 0){
           cnt--;
           System.out.println("Tweet #"+cnt+": "+statuses.get(cnt).getText());
@@ -67,11 +68,13 @@ public class Twitterer
       */
       private void fetchTweets(String handle) throws TwitterException, IOException
       {
-        Paging page = new Paging(1,200);
+        // This is how Twitter stores things. In groups (called Pages)
+        // Setting a limit of 200 ensures that no response is lost due to an issue in internet connection.
+        Paging page = new Paging(1,200); // getting 200 tweets at a time.
         int p = 1;
-        while(p <= 10){
+        while(p <= 10){ // to get a total of 2000 Tweets. (200*10)
           page.setPage(p);
-          statuses.addAll(twitter.getUserTimeline(handle, page));
+          statuses.addAll(twitter.getUserTimeline(handle, page)); // adds all the status to the ArrayList
           p++;
         }
       }   
