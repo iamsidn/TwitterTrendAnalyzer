@@ -48,7 +48,9 @@ import java.util.Scanner;
          // Problem 3
          // Find all Spurs-related tweets in a 20 mile radius around San Antonio
          // in the past day.
-         // bigBird.saQuery("Spurs");
+         System.out.println("Enter a term you want to search for: ");
+         String searchTerm = scan.next();
+         bigBird.saQuery(searchTerm);
 
       }//main         
          

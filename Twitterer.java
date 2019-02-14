@@ -81,13 +81,29 @@ public class Twitterer
     
      /******************  Part 3 *******************/
      /** 
-      * This method finds the last 100 queries in the San Antonio area since yesterday.
-      * Lat/Long for San Antonio is 29.4241° N, 98.4936° W (west is negative.)
+      * This method finds the last 100 queries in the New Delhi area since yesterday.
+      * Lat/Long for New Delhi is 28.6139° N, 77.2090° E (east and north is positive.)
       * @param searchTerm the term to search for.
       */
       public void saQuery (String searchTerm)
       {
-    
-       }
+        Query query = new Query(searchTerm);
+        query.setCount(100); // sets a limit of 100 tweets
+        // get tweets from within 50 km around New Delhi
+        query.setGeoCode(new GeoLocation(28.6139, 77.2090), 50, Query.KILOMETERS); 
+        query.setSince("2019-02-13"); // get tweets since the mentioned date.
+        try{
+          QueryResult result = twitter.search(query);
+          int cnt = 0;
+          System.out.println("Count: "+result.getTweets().size());
+          for(Status tweet: result.getTweets()){
+            cnt++;
+            System.out.println("Tweet # "+cnt+": @"+tweet.getUser().getName()+" tweeted:  "+tweet.getText()+" ");
+          }
+        }catch(TwitterException e){
+          e.printStackTrace();
+        }
+        System.out.println();
+      }
    
    }  
