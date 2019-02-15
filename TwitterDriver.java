@@ -1,12 +1,6 @@
-   /**
+/**
  * Twitter Driver and Client
- * 
- * @author Ria Galanos
- * @author Tony Potter
- * Original idea by Ria Galanos, whose documentation and source can be found at
- * https://github.com/riagalanos/cs1-twitter
- * 
- **/
+**/
 import twitter4j.TwitterException;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -25,8 +19,7 @@ import java.util.Scanner;
          // Problem 1         
          // Create and set a String called message here
       
-         String message = "This is a test of Twitter APIs using Twitter4j in Java."
-                        + "Courtesy of https://github.com/riagalanos/cs1-twitter";
+         String message = "This is a test of Twitter APIs using Twitter4j in Java.";
          // bigBird.tweetOut(message);
 
          // Problem 2
@@ -46,8 +39,6 @@ import java.util.Scanner;
          }
          
          // Problem 3
-         // Find all Spurs-related tweets in a 20 mile radius around San Antonio
-         // in the past day.
          System.out.println("Enter a term you want to search for: ");
          String searchTerm = scan.next();
          bigBird.saQuery(searchTerm);

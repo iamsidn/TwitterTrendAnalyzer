@@ -1,4 +1,4 @@
-import twitter4j.GeoLocation;       // jar found at http://twitter4j.org/en/index.html
+import twitter4j.GeoLocation;
 import twitter4j.Paging;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -62,7 +62,7 @@ public class Twitterer
       }
    	
      /** 
-      * This helper method fetches the most recent 2,000 tweets of a particular user's handle and 
+      * This helper method fetches the most recent 2000 tweets of a particular user's handle and 
       * stores them in an arrayList of Status objects.  Populates statuses.
       * @param String  the Twitter handle (username) without the @sign
       */
